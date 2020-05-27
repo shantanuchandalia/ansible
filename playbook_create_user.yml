@@ -2,10 +2,12 @@
 - name: New USer is created
   hosts: web
   become: true
+  vars:
+    username: test
 
   tasks:
    - name: User gets created
      user:
-       name: test1
+       name: "{{ username }}"
        state: absent
 ...
