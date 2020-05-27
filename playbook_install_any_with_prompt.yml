@@ -1,0 +1,15 @@
+---
+- hosts: web  #group name from the inventory
+  user: ec2-user #Server Auth
+  become: true
+
+
+  vars_prompt:
+    - name: pack_name
+      prompt: Enter the Package Name
+
+  tasks:
+    - name: Install {{ pack_name }}
+      yum: pkg={{ pack_name }} state=installed
+
+...

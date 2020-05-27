@@ -1,0 +1,6 @@
+ansible -i inv web-hostGroup -m raw -a 'uptime'
+ansible -i inv web-hostGroup -m raw1 -a 'uptime'
+ansible -i inv web-hostGroup -m shell -a 'uptime'
+ansible -i inv web-hostGroup -m raw -a 'pwd'
+ansible -i inv web-hostGroup -m raw -a 'whoami'
+ansible -i inv web-hostGroup -m raw -a 'ps'

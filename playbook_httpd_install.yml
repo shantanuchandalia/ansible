@@ -1,0 +1,16 @@
+---
+- hosts: web #group name from the inventory
+  user: ec2-user #Server Auth
+  become: true
+
+  vars:
+    pack_name: httpd
+    serv_name: httpd
+
+  tasks:
+# Installed httpd if not already and start 
+    - name: Install {{ pack_name }}
+      yum: pkg={{ pack_name }} state=installed
+    - name: Start {{ serv_name }}
+      service: name={{ serv_name }} state=started
+...
